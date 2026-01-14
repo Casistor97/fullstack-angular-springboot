@@ -1,1 +1,18 @@
-<p>reservations works!</p>
+<div class="card">
+    <h3>Ajouter réservation</h3>
+    <input #name placeholder="Nom">
+    <input #date type="date">
+    <button (click)="add(name.value, date.value)">Ajouter</button>
+    </div>
+    
+    
+    <div class="card">
+    <h3>Liste des réservations</h3>
+    <table>
+    <tr><th>Nom</th><th>Date</th></tr>
+    <tr *ngFor="let r of reservations">
+    <td>{{r.name}}</td>
+    <td>{{r.date}}</td>
+    </tr>
+    </table>
+</div>

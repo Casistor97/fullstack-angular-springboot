@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './reservations.scss',
 })
 export class Reservations {
-
+  reservations: any[] = [];
+  add(name: string, date: string) {
+  if (name && date) this.reservations.push({ name, date });
+  }
 }
