@@ -20,25 +20,24 @@ jobs:
       - name: Set up Java 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
           java-version: '17'
 
       # 3️⃣ Build & Tests
       - name: Build & Test Backend
         run: |
-          cd backend
+          cd backendapp
           mvn clean verify
 
       # 4️⃣ Package
       - name: Package JAR
         run: |
-          cd backend
+          cd backendapp
           mvn package -DskipTests
 
       # 5️⃣ Docker Build
       - name: Build Docker Image
         run: |
-          cd backend
+          cd backendapp
           docker build -t backendapp:latest .
 
   frontend:
